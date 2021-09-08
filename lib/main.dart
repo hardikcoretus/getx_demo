@@ -10,10 +10,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'SnackBar',
+      title: 'Dialog ',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('GetX Snackbar'),
+          title: Text('GetX Dialog'),
         ),
         body: Center(
           child: Column(
@@ -22,34 +22,34 @@ class MyApp extends StatelessWidget {
             children: [
               ElevatedButton(
                   onPressed: () {
-                    Get.snackbar(
-                        'Snackbar Title', 'this is the snackbar from get',
-                        snackPosition: SnackPosition.BOTTOM,
-                        titleText: Text('Ttitle Text',
-                            style: TextStyle(color: Colors.white)),
-                        messageText: Text(
-                          'This is widget Text',
-                          style: TextStyle(color: Colors.white),
+                    //Default Dialog
+                    // Get.defaultDialog();
+
+                    //Custom Dialog
+                    Get.defaultDialog(
+                        title: 'Custom Dialog Title',
+                        titleStyle:
+                            TextStyle(fontSize: 18.0, color: Colors.black45),
+                        backgroundColor: Colors.amber,
+                        barrierDismissible: true,
+                        content: Column(
+                          children: [
+                            Text('1'),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Text('2'),
+                          ],
                         ),
-                        colorText: Colors.red,
-                        backgroundColor: Colors.black,
-                        margin: EdgeInsets.all(20),
-                        animationDuration: Duration(milliseconds: 300),
-                        isDismissible: true,
-                        dismissDirection: SnackDismissDirection.HORIZONTAL,
-                        borderRadius: 20,
-                        icon: Icon(
-                          Icons.add,
-                          color: Colors.white,
-                        ),
-                        shouldIconPulse: false,
-                        mainButton: TextButton(
-                          onPressed: () {},
-                          child: Text('Retry'),
-                        ));
+                        textCancel: 'Cancel',
+                        cancelTextColor: Colors.red,
+                        textConfirm: 'Okay',
+                        onConfirm: () {
+                          Get.back();
+                          Get.snackbar('Confirmed....', 'Done !');
+                        });
                   },
-                  child: Text('show snackbar')),,
-                  
+                  child: Text('show dialog')),
             ],
           ),
         ),
