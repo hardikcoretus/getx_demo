@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextButton(
-                  onPressed: () {
+                  onPressed: () async {
                     /* Route Naigation */
                     /*  Get.to(Home(),
                         // fullscreenDialog: true,
@@ -38,6 +38,10 @@ class MyApp extends StatelessWidget {
                     // Get.offAll(Home());
 
                     /* Move to Next Screen With Data */
+
+                    /* Get result data when click on go to previous button from home screen */
+                    var data = await Get.to(Home());
+                    print('the received data is $data');
                     Get.to(Home(), arguments: 'Data From Main Screen');
 
                     /* Bottom Sheet */

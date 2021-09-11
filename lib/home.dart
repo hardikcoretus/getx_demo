@@ -23,7 +23,9 @@ class Home extends StatelessWidget {
               ),
               TextButton(
                   onPressed: () {
-                    Get.back();
+                    // Get.back();
+                    /*Send data to previous screen must use result as name*/
+                    Get.back(result: 'this is from home screen');
                   },
                   child: Text('Back To Previous')),
             ],
