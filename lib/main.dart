@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_demo/home.dart';
+import 'package:flutter_getx_demo/reactive_state.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -12,99 +13,113 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Go To Next Screen',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('GetX Route Navigation'),
-        ),
-        body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                  onPressed: () async {
-                    /* Route Naigation */
-                    /*  Get.to(Home(),
-                        // fullscreenDialog: true,
-                        /* Full Screen Dialog */
-                        transition: Transition.zoom,
-                        duration: Duration(microseconds: 4000),
-                        curve: Curves.bounceIn); */
+      // home: getXComponent(),
+      home: ReactiveState(),
 
-                    /* Go to home screen but no option to return previous screen */
-                    // Get.off(Home());
+      /* For Reactive State Management */
+    );
+  }
+}
 
-                    /* Go to home screen and cancel all previous screens/route */
-                    // Get.offAll(Home());
+class getXComponent extends StatelessWidget {
+  const getXComponent({
+    Key? key,
+  }) : super(key: key);
 
-                    /* Move to Next Screen With Data */
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('GetX Route Navigation'),
+      ),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextButton(
+                onPressed: () async {
+                  /* Route Naigation */
+                  /*  Get.to(Home(),
+                      // fullscreenDialog: true,
+                      /* Full Screen Dialog */
+                      transition: Transition.zoom,
+                      duration: Duration(microseconds: 4000),
+                      curve: Curves.bounceIn); */
 
-                    /* Get result data when click on go to previous button from home screen */
-                    var data = await Get.to(Home());
-                    print('the received data is $data');
-                    Get.to(Home(), arguments: 'Data From Main Screen');
+                  /* Go to home screen but no option to return previous screen */
+                  // Get.off(Home());
 
-                    /* Bottom Sheet */
-                    // Get.bottomSheet(
-                    //     Container(
-                    //       child: Wrap(
-                    //         children: <Widget>[
-                    //           ListTile(
-                    //             leading: Icon(Icons.wb_sunny_outlined),
-                    //             title: Text('Light Theme'),
-                    //             onTap: () =>
-                    //                 {Get.changeTheme(ThemeData.light())},
-                    //           ),
-                    //           ListTile(
-                    //             leading: Icon(Icons.wb_sunny),
-                    //             title: Text('Dark Theme'),
-                    //             onTap: () =>
-                    //                 {Get.changeTheme(ThemeData.dark())},
-                    //           ),
-                    //         ],
-                    //       ),
-                    //     ),
+                  /* Go to home screen and cancel all previous screens/route */
+                  // Get.offAll(Home());
 
-                    //     barrierColor: Colors.grey.shade100,  // Background Color when bottomsheet open
-                    //     backgroundColor: Colors.black,
+                  /* Move to Next Screen With Data */
 
-                    //     shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(20),
-                    //         side: BorderSide(
-                    //             color: Colors.white,
-                    //             style: BorderStyle.solid,
-                    //             width: 2.0)));
+                  /* Get result data when click on go to previous button from home screen */
+                  var data = await Get.to(Home());
+                  print('the received data is $data');
+                  Get.to(Home(), arguments: 'Data From Main Screen');
 
-                    /* Default Dialog */
-                    // Get.defaultDialog();
+                  /* Bottom Sheet */
+                  // Get.bottomSheet(
+                  //     Container(
+                  //       child: Wrap(
+                  //         children: <Widget>[
+                  //           ListTile(
+                  //             leading: Icon(Icons.wb_sunny_outlined),
+                  //             title: Text('Light Theme'),
+                  //             onTap: () =>
+                  //                 {Get.changeTheme(ThemeData.light())},
+                  //           ),
+                  //           ListTile(
+                  //             leading: Icon(Icons.wb_sunny),
+                  //             title: Text('Dark Theme'),
+                  //             onTap: () =>
+                  //                 {Get.changeTheme(ThemeData.dark())},
+                  //           ),
+                  //         ],
+                  //       ),
+                  //     ),
 
-                    /* Custom Dialog*/
-                    // Get.defaultDialog(
-                    //     title: 'Custom Dialog Title',
-                    //     titleStyle:
-                    //         TextStyle(fontSize: 18.0, color: Colors.black45),
-                    //     backgroundColor: Colors.amber,
-                    //     barrierDismissible: true,
-                    //     content: Column(
-                    //       children: [
-                    //         Text('1'),
-                    //         const SizedBox(
-                    //           height: 20,
-                    //         ),
-                    //         Text('2'),
-                    //       ],
-                    //     ),
-                    //     textCancel: 'Cancel',
-                    //     cancelTextColor: Colors.red,
-                    //     textConfirm: 'Okay',
-                    //     onConfirm: () {
-                    //       Get.back();
-                    //       Get.snackbar('Confirmed....', 'Done !');
-                    //     });
-                  },
-                  child: Text('Go to Next')),
-            ],
-          ),
+                  //     barrierColor: Colors.grey.shade100,  // Background Color when bottomsheet open
+                  //     backgroundColor: Colors.black,
+
+                  //     shape: RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(20),
+                  //         side: BorderSide(
+                  //             color: Colors.white,
+                  //             style: BorderStyle.solid,
+                  //             width: 2.0)));
+
+                  /* Default Dialog */
+                  // Get.defaultDialog();
+
+                  /* Custom Dialog*/
+                  // Get.defaultDialog(
+                  //     title: 'Custom Dialog Title',
+                  //     titleStyle:
+                  //         TextStyle(fontSize: 18.0, color: Colors.black45),
+                  //     backgroundColor: Colors.amber,
+                  //     barrierDismissible: true,
+                  //     content: Column(
+                  //       children: [
+                  //         Text('1'),
+                  //         const SizedBox(
+                  //           height: 20,
+                  //         ),
+                  //         Text('2'),
+                  //       ],
+                  //     ),
+                  //     textCancel: 'Cancel',
+                  //     cancelTextColor: Colors.red,
+                  //     textConfirm: 'Okay',
+                  //     onConfirm: () {
+                  //       Get.back();
+                  //       Get.snackbar('Confirmed....', 'Done !');
+                  //     });
+                },
+                child: Text('Go to Next')),
+          ],
         ),
       ),
     );
