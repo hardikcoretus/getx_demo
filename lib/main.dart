@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_demo/getcontrollerr.dart';
 import 'package:flutter_getx_demo/home.dart';
-import 'package:flutter_getx_demo/obx_class.dart';
-import 'package:flutter_getx_demo/reactive_state.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Go To Next Screen',
       // home: getXComponent(),
-      home: ObxClass(),
+      home: GetControllerr(),
 
       /* For Reactive State Management */
     );
