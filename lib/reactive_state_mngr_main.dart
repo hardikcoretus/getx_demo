@@ -27,8 +27,12 @@ class ReactiveStateMngrMain extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () {
+                  
+                  //controller variable declared above
+                  reactiveController.increaseCounter();
+
                   //If Instance of controller not created at top
-                  Get.find<ReactiveController>().increaseCounter();
+                  // Get.find<ReactiveController>().increaseCounter();
                 },
                 child: Text('Increment'))
           ],
