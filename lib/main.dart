@@ -3,6 +3,8 @@ import 'package:flutter_getx_demo/getcontrollerr.dart';
 import 'package:flutter_getx_demo/home.dart';
 import 'package:get/get.dart';
 
+import 'reactive_state_mngr_main.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Go To Next Screen',
       // home: getXComponent(),
-      home: GetControllerr(),
+      home: ReactiveStateMngrMain(),
 
       /* For Reactive State Management */
     );
