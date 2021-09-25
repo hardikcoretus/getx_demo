@@ -18,7 +18,7 @@ class GetBuilderStateMainManager extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             GetBuilder<GetBuilderController>(
-              //When you initialise instance at top no need of init property
+                //When you initialise instance at top no need of init property
                 // init: GetBuilderController(),
                 builder: (cntrlr) {
               // return Text('Value if Variable is ${cntrlr.count}');
