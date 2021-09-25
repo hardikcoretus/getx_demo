@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_demo/lifecyclecontroller.dart';
+import 'package:flutter_getx_demo/controller/lifecyclecontroller.dart';
 import 'package:get/get.dart';
 
 class GetLifeCycleClass extends StatelessWidget {

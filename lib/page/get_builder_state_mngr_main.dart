@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_demo/getbuilder_controller.dart';
+import 'package:flutter_getx_demo/controller/getbuilder_controller.dart';
 import 'package:get/get.dart';
 
 class GetBuilderStateMainManager extends StatelessWidget {

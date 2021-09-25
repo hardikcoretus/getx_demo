@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_demo/reactivecontroller.dart';
+import 'package:flutter_getx_demo/controller/getxidcontroller.dart';
 import 'package:get/get.dart';
 
-class ReactiveStateMngrMain extends StatelessWidget {
-  ReactiveController reactiveController = Get.put(ReactiveController());
+class GetxId extends StatelessWidget {
+  GetIdController cntrlr = Get.put(GetIdController());
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Reactive State Manager',
+          'GetX Unique ID',
         ),
       ),
       body: Center(
@@ -17,19 +17,18 @@ class ReactiveStateMngrMain extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            GetX<ReactiveController>(
-                init: ReactiveController(),
+            GetBuilder<GetIdController>(
+                id: 'txtCount',
                 builder: (cntr) {
-                  return Text('Updated Value is ${cntr.counter}');
+                  return Text('Updated Value is ${cntr.count}');
                 }),
             const SizedBox(
               height: 10,
             ),
             TextButton(
                 onPressed: () {
-                  
                   //controller variable declared above
-                  reactiveController.increaseCounter();
+                  cntrlr.increment();
 
                   //If Instance of controller not created at top
                   // Get.find<ReactiveController>().increaseCounter();

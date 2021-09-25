@@ -1,4 +1,4 @@
-import 'package:flutter_getx_demo/student.dart';
+import 'package:flutter_getx_demo/page/student.dart';
 import 'package:get/get.dart';
 
 class MyControllder extends GetxController {

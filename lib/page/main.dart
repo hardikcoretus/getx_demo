@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_demo/getcontrollerr.dart';
-import 'package:flutter_getx_demo/home.dart';
-import 'package:flutter_getx_demo/lifecycle_class.dart';
+
+import 'package:flutter_getx_demo/page/getx_id.dart';
+import 'package:flutter_getx_demo/page/home.dart';
 import 'package:get/get.dart';
 
 import 'get_builder_state_mngr_main.dart';
+import 'lifecycle_class.dart';
 import 'reactive_state_mngr_main.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Go To Next Screen',
       // home: getXComponent(),
-      home: GetLifeCycleClass(),
+      home: GetxId(),
 
       /* For Reactive State Management */
     );

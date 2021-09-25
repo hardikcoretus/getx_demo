@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_demo/reactive_state.dart';
-import 'package:flutter_getx_demo/student.dart';
+import 'package:flutter_getx_demo/page/student.dart';
 import 'package:get/get.dart';
 
 class ObxClass extends StatelessWidget {
