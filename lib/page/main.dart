@@ -37,7 +37,7 @@ class getXComponent extends StatelessWidget {
       appBar: AppBar(
         title: Text('GetX Route Navigation'),
       ),
-      body: Center(
+      body: Center(  
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
