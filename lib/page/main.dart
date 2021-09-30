@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_demo/other/messages.dart';
 
-import 'package:flutter_getx_demo/page/getx_id.dart';
 import 'package:flutter_getx_demo/page/home.dart';
+import 'package:flutter_getx_demo/page/internationalization_page.dart';
 import 'package:get/get.dart';
-
-import 'get_builder_state_mngr_main.dart';
-import 'lifecycle_class.dart';
-import 'reactive_state_mngr_main.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,9 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      translations: Messages(), // Your Translation File
+      fallbackLocale: Locale(
+          'en', 'US'), //default local // to get device locale Get.deviceLocale
       title: 'Go To Next Screen',
       // home: getXComponent(),
-      home: GetxId(),
+      home: InternationalizationPage(),
 
       /* For Reactive State Management */
     );
@@ -37,7 +37,7 @@ class getXComponent extends StatelessWidget {
       appBar: AppBar(
         title: Text('GetX Route Navigation'),
       ),
-      body: Center(  
+      body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
