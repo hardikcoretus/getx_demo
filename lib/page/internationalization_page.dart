@@ -32,6 +32,7 @@ class InternationalizationPage extends StatelessWidget {
                     obscureText: false,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
+                      
                       labelText: 'lbl_name'.tr,
                       hintText: 'hint_enter_name'.tr,
                     ),
