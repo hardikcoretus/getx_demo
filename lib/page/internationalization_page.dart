@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 class InternationalizationPage extends StatelessWidget {
   ChangeLangController controller = Get.put(ChangeLangController());
 
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +34,6 @@ class InternationalizationPage extends StatelessWidget {
                     obscureText: false,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      
                       labelText: 'lbl_name'.tr,
                       hintText: 'hint_enter_name'.tr,
                     ),

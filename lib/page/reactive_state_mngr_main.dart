@@ -22,12 +22,11 @@ class ReactiveStateMngrMain extends StatelessWidget {
                 builder: (cntr) {
                   return Text('Updated Value is ${cntr.counter}');
                 }),
-            const SizedBox(
+            const SizedBox( 
               height: 10,
             ),
             TextButton(
                 onPressed: () {
-                  
                   //controller variable declared above
                   reactiveController.increaseCounter();
 
