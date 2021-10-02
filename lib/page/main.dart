@@ -1,7 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_demo/binding/allcontrollerbinding.dart';
 import 'package:flutter_getx_demo/other/messages.dart';
+import 'package:flutter_getx_demo/page/getx_binding.dart';
 
 import 'package:flutter_getx_demo/page/home.dart';
 import 'package:flutter_getx_demo/page/internationalization_page.dart';
@@ -11,7 +13,7 @@ import 'package:get/get.dart';
 import 'getx_service_page.dart';
 
 void main() async {
-  await initServices();
+  // await initServices();
   runApp(MyApp());
 }
 
@@ -28,12 +30,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       translations: Messages(), // Your Translation File
+
+      //data binding initialization
+      initialBinding: AllControllerBinding(),
       fallbackLocale: Locale(
           'en', 'US'), //default local // to get device locale Get.deviceLocale
-      title: 'Go To Next Screen',
+      title: 'Binding',
       // home: getXComponent(),
       // home: InternationalizationPage(),
-      home: GetxServicePage(),
+      // home: GetxServicePage(),
+      home: GetXBindingPage(),
 
       /* For Reactive State Management */
     );
