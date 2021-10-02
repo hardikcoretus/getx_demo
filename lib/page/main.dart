@@ -1,16 +1,29 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_demo/other/messages.dart';
 
 import 'package:flutter_getx_demo/page/home.dart';
 import 'package:flutter_getx_demo/page/internationalization_page.dart';
+import 'package:flutter_getx_demo/page/service.dart';
 import 'package:get/get.dart';
 
-void main() {
+import 'getx_service_page.dart';
+
+void main() async {
+  await initServices();
   runApp(MyApp());
 }
 
+Future<void> initServices() async {
+  print('service starting...');
+  // await Get.putAsync<Service>(() async => await Service());
+  await Get.put(GetXServices());  
+  print('all service started'); 
+}
+
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  // This widget is the root of your application. 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -19,7 +32,8 @@ class MyApp extends StatelessWidget {
           'en', 'US'), //default local // to get device locale Get.deviceLocale
       title: 'Go To Next Screen',
       // home: getXComponent(),
-      home: InternationalizationPage(),
+      // home: InternationalizationPage(),
+      home: GetxServicePage(),
 
       /* For Reactive State Management */
     );
