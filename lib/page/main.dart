@@ -2,11 +2,15 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_demo/binding/allcontrollerbinding.dart';
+import 'package:flutter_getx_demo/binding/binding_one_controller_binding.dart';
+import 'package:flutter_getx_demo/binding/myappcontrollerbinding.dart';
+import 'package:flutter_getx_demo/controller/binding_one_controller.dart';
 import 'package:flutter_getx_demo/other/messages.dart';
 import 'package:flutter_getx_demo/page/getx_binding.dart';
 
 import 'package:flutter_getx_demo/page/home.dart';
 import 'package:flutter_getx_demo/page/internationalization_page.dart';
+import 'package:flutter_getx_demo/page/next_bind_screen.dart';
 import 'package:flutter_getx_demo/page/service.dart';
 import 'package:get/get.dart';
 
@@ -14,6 +18,9 @@ import 'getx_service_page.dart';
 
 void main() async {
   // await initServices();
+
+  /** While Using GetPages Route */
+  MyAppControllerBinding().dependencies();
   runApp(MyApp());
 }
 
@@ -32,7 +39,8 @@ class MyApp extends StatelessWidget {
       translations: Messages(), // Your Translation File
 
       //data binding initialization
-      initialBinding: AllControllerBinding(),
+      /** No Need of initialize while binding is given to rout gate pages */
+      // initialBinding: AllControllerBinding(),
       fallbackLocale: Locale(
           'en', 'US'), //default local // to get device locale Get.deviceLocale
       title: 'Binding',
@@ -42,6 +50,27 @@ class MyApp extends StatelessWidget {
       home: GetXBindingPage(),
 
       /* For Reactive State Management */
+
+      /** If GetX Binding Applied at root level */
+      // getPages: [
+      //   GetPage(
+      //     name: '/next_binding',
+      //     page: () => NextBindScreen(),
+      //     binding: BindingOneControllerBinding(),
+      //   )
+      // ],
+
+      /** By Using Of Binding Builder (if we don't want to use seperate binding class) */
+
+      getPages: [
+        GetPage(
+            name: '/next_binding',
+            page: () => NextBindScreen(),
+            binding: BindingsBuilder(() => {
+                  Get.lazyPut<BindingOneController>(
+                      () => BindingOneController())
+                }))
+      ],
     );
   }
 }
