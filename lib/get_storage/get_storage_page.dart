@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -56,5 +58,12 @@ class GetStoragePage extends StatelessWidget {
   }
 }
 
+//Remove a Key from storage
+// storage.remove('email');
 
-//
+//Erase container
+// storage.erase();
+
+//Create Container with name
+// GetStorage g = GetStorage('MyStorage');
+// await GetStorage.init('MyStorage');
