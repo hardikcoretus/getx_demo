@@ -6,6 +6,7 @@ import 'package:flutter_getx_demo/binding/allcontrollerbinding.dart';
 import 'package:flutter_getx_demo/binding/binding_one_controller_binding.dart';
 import 'package:flutter_getx_demo/binding/myappcontrollerbinding.dart';
 import 'package:flutter_getx_demo/controller/binding_one_controller.dart';
+import 'package:flutter_getx_demo/get_storage/get_storage_page.dart';
 import 'package:flutter_getx_demo/other/messages.dart';
 import 'package:flutter_getx_demo/page/getx_binding.dart';
 
@@ -14,6 +15,7 @@ import 'package:flutter_getx_demo/page/internationalization_page.dart';
 import 'package:flutter_getx_demo/page/next_bind_screen.dart';
 import 'package:flutter_getx_demo/page/service.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'getx_service_page.dart';
 
@@ -22,6 +24,10 @@ void main() async {
 
   /** While Using GetPages Route */
   MyAppControllerBinding().dependencies();
+
+  /* For Get Storage Initialize Here*/
+  await GetStorage.init();
+
   runApp(MyApp());
 }
 
@@ -44,12 +50,14 @@ class MyApp extends StatelessWidget {
       // initialBinding: AllControllerBinding(),
       fallbackLocale: Locale(
           'en', 'US'), //default local // to get device locale Get.deviceLocale
-      title: 'Binding',
+      title: 'Get Storage',
       // home: getXComponent(),
       // home: InternationalizationPage(),
       // home: GetxServicePage(),
       // home: GetXBindingPage(),
-      home: ProductListPage(),
+      // home: ProductListPage(),
+
+      home: GetStoragePage(),
 
       /* For Reactive State Management */
 
