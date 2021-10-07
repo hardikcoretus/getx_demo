@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_demo/api_parsing/product_list_page.dart';
 import 'package:flutter_getx_demo/binding/allcontrollerbinding.dart';
 import 'package:flutter_getx_demo/binding/binding_one_controller_binding.dart';
 import 'package:flutter_getx_demo/binding/myappcontrollerbinding.dart';
@@ -47,7 +48,8 @@ class MyApp extends StatelessWidget {
       // home: getXComponent(),
       // home: InternationalizationPage(),
       // home: GetxServicePage(),
-      home: GetXBindingPage(),
+      // home: GetXBindingPage(),
+      home: ProductListPage(),
 
       /* For Reactive State Management */
 
